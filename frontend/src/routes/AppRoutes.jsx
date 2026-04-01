@@ -18,8 +18,8 @@ import Profile from "../pages/profile/Profile";
 const AppRoutes = () => {
   return (
     <Routes>
-      <protected>
-      <Route path="/login" element={<Login />} /></protected>
+      
+      <Route path="/login" element={<Login />} />
 
       <Route path="/signup" element={<Register />} />
       <Route path="/dashboard" element={<Dashboard />} />
