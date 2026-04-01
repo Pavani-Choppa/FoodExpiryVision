@@ -1,14 +1,6 @@
 fastapi
 uvicorn
-tensorflow
+tensorflow==2.15.0
 pillow
-numpy
+numpy==1.26.4
 python-multipart
-ultralytics
-
-
-
-pip uninstall numpy -y
-pip install numpy==1.26.4
-pip install tensorflow==2.15
-pip install fastapi uvicorn pillow
