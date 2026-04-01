@@ -60,7 +60,7 @@ def startup_event():
     print("👉 Open in browser: http://127.0.0.1:8000/docs\n")
 
 # 🔥 REBUILD SAME MODEL ARCHITECTURE
-base_model = MobileNetV2(weights='imagenet', include_top=False)
+base_model = MobileNetV2(weights=None, include_top=False)
 
 x = base_model.output
 x = GlobalAveragePooling2D()(x)
