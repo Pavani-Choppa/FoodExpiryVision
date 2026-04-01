@@ -1,0 +1,416 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Main content wrapper (sidebar-safe) */
+.main {
+  flex: 1;
+  margin-left: 260px;     /* sidebar width */
+  padding-top: 72px;      /* topbar height */
+  background: #fff5f5;
+}
+
+
+
+@media (max-width: 768px) {
+  .main {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Page */
+.page {
+  padding: 24px 32px;
+  padding-top: 46px;
+  min-height: 100vh;
+  background: #fff5f5;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 16px;
+    padding-top: 16px;
+  }
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h1 {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.header p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.addBtn {
+  background: linear-gradient(90deg, #e23744, #fb7185);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.highlight {
+  outline: 2px solid #ff9800;
+  box-shadow: 12 15 18 9px rgba(255, 152, 0, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+  100% { box-shadow: 0 0 0 12px rgba(34,197,94,0); }
+}
+
+/* Header */
+
+.search input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+}
+
+.filters button {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+  background: #fff;
+  cursor: pointer;
+}
+
+.filters .active {
+  background: #fff1f2;
+  color: #e23744;
+} 
+
+
+
+.controls {
+  background: #fff5f5;
+  padding: 16px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+/* Search Row */
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+}
+
+.searchRow input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  background: transparent;
+}
+
+/* Filter Row */
+.filterRow {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px; /* ⬆ more spacing */
+}
+
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 16px;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+  min-height: 170px;          /* ⬆ gives presence */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.card {
+  padding: 20px;              /* ⬆ from 16px */
+  border-radius: 20px;
+  min-height: 170px;          /* ⬆ gives presence */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 16px;      /* ⬆ from 14 */
+  font-weight: 700;
+}
+
+.meta {
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.storage {
+  font-size: 12px;
+  margin-top: 4px;
+  color: #6b7280;
+}
+
+
+.expiryText {
+  margin: 0px 10px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  padding:5px 15px ;
+  /* background-color: transparent; */
+  
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  align-items: center;
+}
+
+
+.safe {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+}
+
+.near {
+  background: rgba(245, 158, 11, 0.15);
+  color: #d97706;
+}
+
+.expired {
+  background: rgba(239, 68, 68, 0.15);
+  color: #dc2626;
+}
+
+.safeText { color: #22c55e; }
+.nearText { color: #f59e0b; }
+.expiredText { color: #e23744; }
+
+.imageBox {
+    width: 56px;   /* ⬆ from 48 */
+  height: 56px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+
+
+
+.imageBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardBody {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+
+/* Table */
+.tableWrap {
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+}
+
+.tableWrap table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.tableRow {
+  height: 72px; /* 🔑 makes rows bigger */
+}
+
+.tableRow td,th {
+  padding: 16px 18px;
+  font-size: 14px;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(226, 55, 68, 0.12); /* separation line */
+}
+
+
+.itemCell {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.itemImage {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #fff1f2;
+}
+
+.itemName {
+  font-weight: 600;
+  color: #111827;
+}
+
+.safe {
+  color: #16a34a;
+}
+
+.near {
+  color: #f59e0b;
+}
+
+.expired {
+  color: #e23744;
+}
+
+
+@media (max-width: 768px) {
+  .tableWrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tableWrap table {
+    min-width: 700px; /* ensures scroll */
+  }
+
+  /* optional: nice scrollbar */
+  .tableWrap::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .tableWrap::-webkit-scrollbar-thumb {
+    background: rgba(226, 55, 68, 0.35);
+    border-radius: 10px;
+  }
+}
+
+/*Menu Wrapper*/
+.menuWrapper {
+  position: relative;
+}
+
+.menuIcon {
+  cursor: pointer;
+  color: #6b7280;
+}
+.menuIcon:hover {
+  color: #e23744;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 26px;
+  right: 0;
+
+  width: 190px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 6px;
+
+  border: 1px solid rgba(226, 55, 68, 0.15);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+}
+.dropdownMenu button {
+  min-width: 100%;
+  background: transparent;
+  border: none;
+
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dropdownMenu button:hover {
+  background: #fff1f2;
+}
+.menuDivider {
+  height: 1px;
+  margin: 6px 0;
+  background: rgba(226, 55, 68, 0.15);
+}
+
+.delete {
+  color: #e23744 !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    margin-left: 0;
+    width: 100%;
+    padding-bottom: 80px;
+
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+

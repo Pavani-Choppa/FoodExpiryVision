@@ -1,0 +1,74 @@
+.calendar {
+  width: 280px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.header h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header button {
+   width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid rgba(226, 55, 68, 0.15);
+  background: transparent;
+  cursor: pointer;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 12px;
+  color: #9ca3af;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.day {
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.day:hover {
+  background: #fff1f2;
+}
+
+.selected,.selected:hover {
+  background: #fb7185;
+  color: #fff;
+  font-weight: 600;
+}
+
+
+.muted {
+  color: #d1d5db;
+  text-align: center;
+  font-size: 13px;
+}

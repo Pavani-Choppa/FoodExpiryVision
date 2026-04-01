@@ -1,0 +1,52 @@
+# =====================
+# Node.js
+# =====================
+node_modules/
+**/node_modules/
+package-lock.json
+
+# =====================
+# Environment Variables
+# =====================
+.env
+.env.local
+.env.*.local
+
+# =====================
+# Python
+# =====================
+venv/
+**/venv/
+__pycache__/
+*.pyc
+
+# =====================
+# AI Models (large files)
+# =====================
+*.h5
+*.keras
+*.pt
+
+# =====================
+# Uploads / Temp files
+# =====================
+uploads/
+temp/
+*.log
+
+# =====================
+# OS files
+# =====================
+.DS_Store
+Thumbs.db
+
+# =====================
+# VS Code
+# =====================
+.vscode/
+
+# =====================
+# Build files
+# =====================
+dist/
+build/

@@ -1,0 +1,173 @@
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid rgba(226, 55, 68, 0.15);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+ 
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1200;
+}
+
+
+
+
+
+
+
+/* ================= BRAND ================= */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 6px 14px;
+}
+
+.brandIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #e23744, #fb7185);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandIcon img {
+  width: 26px;          /* ⬆ increase size */
+  height: auto;         /* 🔑 preserve original aspect ratio */
+  object-fit: contain;  /* 🔑 never crop or distort */
+}
+
+
+.brand h3 {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.brand span {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* ================= DIVIDER ================= */
+.navDivider {
+  margin: 10px 6px 18px;
+  border-bottom: 1px solid rgba(226, 55, 68, 0.15);
+}
+
+/* ================= MENU ================= */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 6px; /* pushes nav slightly down */
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  margin: 0 4px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.item svg {
+  width: 18px;
+  height: 18px;
+}
+
+.item:hover {
+  background: #fff1f2;
+  color: #e23744;
+}
+
+.active {
+  background: #fff1f2;
+  color: #e23744;
+  font-weight: 600;
+}
+
+/* ================= USER ================= */
+.user {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 🔑 pushes logout icon right */
+  padding-top: 18px;
+  border-top: 1px solid rgba(226, 55, 68, 0.15);
+}
+.userLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e23744, #fb7185);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user p {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.user span {
+  font-size: 11px;
+  color: #9ca3af;
+}
+.logoutBtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #9ca3af;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background: #fff1f2;
+  color: #e23744;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}

@@ -1,0 +1,201 @@
+/* ================= SEARCH + FILTER BAR ================= */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;                     /* ⬆ more spacing */
+  padding: 18px 22px;            /* ⬆ bigger container */
+  background: #fff5f5;
+  border-radius: 22px;
+  margin-bottom: 20px;
+}
+
+/* ================= SEARCH ================= */
+.search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #ffffff;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+  padding: 14px 18px;            /* ⬆ taller */
+  border-radius: 16px;
+}
+
+.search svg {
+  width: 18px;
+  height: 18px;
+  color: #9ca3af;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  width: 100%;
+
+  font-size: 14px;               /* ⬆ text size */
+  font-weight: 500;
+  color: #374151;
+}
+
+/* ================= FILTERS ================= */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filterWrap {
+  position: relative;
+}
+
+.filterWrap button {
+  background: #ffffff;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+
+  padding: 12px 16px;            /* ⬆ bigger button */
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;               /* ⬆ text */
+  font-weight: 500;
+  cursor: pointer;
+
+  min-width: 90px;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown {
+  position: absolute;
+  top: 48px;                     /* ⬆ spacing below button */
+  left: 0;
+  width: 190px;
+
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  z-index: 100;
+}
+
+.dropdown button {
+  width: 100%;
+  background: transparent;
+  border: none;
+
+  padding: 10px 12px;
+  border-radius: 12px;
+
+  text-align: left;
+  font-size: 14px;               /* ⬆ */
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+.dropdown button:hover {
+  background: #fff1f2;
+}
+
+/* selected option */
+.activeOption {
+  background: #ffff;
+  color: #e23744;
+  border: 2px solid rgba(226, 55, 68, 0.15) !important;
+
+}
+
+/* ================= VIEW TOGGLE ================= */
+.viewToggle {
+  display: flex;
+  gap: 10px;
+}
+
+.viewToggle button {
+  width: 44px;                   /* ⬆ */
+  height: 44px;                  /* ⬆ */
+
+  border-radius: 14px;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.viewToggle button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.activeView {
+  background: linear-gradient(135deg, #e23744, #fb7185) !important;
+  color: #ffffff;
+  border: none;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  /* Main container */
+  .bar {
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  /* Search full width */
+  .search {
+    width: 100%;
+  }
+
+  /* Filters + View Toggle in ONE ROW */
+  .filters {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* 3 filter dropdowns */
+  .filterWrap {
+    flex: 1;
+  }
+
+  .filterWrap button {
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  /* View toggle aligned right */
+  .viewToggle {
+    display: flex;
+    gap: 8px;
+    margin-left: auto; /* 🔑 pushes grid/table to right */
+  }
+
+  .viewToggle button {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Dropdown full width on mobile */
+  .dropdown {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+

@@ -1,0 +1,719 @@
+
+
+/* ================= ROOT ================= */
+.page {
+  background: #fdf7f7;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-top: 76px;
+}
+
+/* ================= HEADER ================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 64px;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid rgba(226, 55, 68, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  padding: 8px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e23744, #fb7185);
+  box-shadow: 0px 10px 25px rgba(226, 55, 68, 0.05);
+}
+
+.headerActions {
+  display: flex;
+  gap: 14px;
+}
+
+.linkBtn {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+}
+
+.primaryBtn {
+  background: linear-gradient(90deg, #e23744, #fb7185);
+  border: none;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 90px 64px;
+  gap: 60px;
+}
+
+.heroLeft {
+  max-width: 560px;
+}
+
+.badge {
+  display: inline-flex;
+  background: rgba(226, 55, 68, 0.12);
+  color: #e23744;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  align-items: center;
+  gap: 6px;
+}
+/* .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+} */
+
+
+.title {
+  font-size: 67px;
+  font-weight: 900;          /* ✅ max reliable bold */
+  line-height: 1.05;         /* ✅ tighter vertical spacing */
+  letter-spacing: -0.03em;   /* ✅ reduces space between letters */
+  margin-bottom: 16px;
+}
+
+
+.title span {
+  color: #e23744;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #6b7280;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 1px solid rgba(226, 55, 68, 0.25);
+  color: #e23744;
+  padding: 10px 18px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* ================= HERO RIGHT ================= */
+.heroRight {
+  position: relative;
+  width: 520px;
+  height: 220px;
+}
+
+/* ================= MAIN FOOD CARD ================= */
+.mainCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 440px;
+  height: 120px;
+
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+
+  padding: 20px 24px;
+  border-radius: 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0px 30px 60px rgba(226, 55, 68, 0.12);
+}
+
+.mainCardLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mainCardLeft > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.cardSub {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.expireLabel {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.daysBadge {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+
+/* ================= STATS ================= */
+.stats {
+  display: flex;
+  gap: 36px;
+}
+
+.stats h3 {
+  color: #e23744;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.stats p {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ================= FLOATING CARDS ================= */
+.floatingCard {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+
+  padding: 14px 18px;
+  border-radius: 18px;
+
+  box-shadow: 0px 30px 60px rgba(226, 55, 68, 0.14);
+  animation: floatY 4s ease-in-out infinite;
+
+  z-index: 5;
+}
+
+.floatingCard p {
+  font-size: 15px;
+  color: #111827;
+}
+
+.floatingCard strong {
+  font-size: 13px;
+  /* font-weight: 900; */
+  color: #6b7280;
+  
+}
+
+.floatOne {
+  bottom: -18px;
+  left: -30px;
+}
+
+.floatTwo {
+  right: -28px;
+  top: -6px;
+  animation-delay: 1.6s;
+}
+
+/* ================= ICON COLORS ================= */
+.iconGreen,
+.iconRed,
+.iconYellow {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconGreen {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+}
+
+.iconRed {
+  background: rgba(239, 68, 68, 0.15);
+  color: #dc2626;
+}
+
+.iconYellow {
+  background: rgba(245, 158, 11, 0.15);
+  color: #d97706;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes floatY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ================= FEATURES ================= */
+.features {
+  padding: 80px 64px;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 34px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.sectionSub {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 48px;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  padding: 26px 22px;
+  border-radius: 18px;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+
+   animation: cardFadeUp 0.6s ease forwards;
+   text-align: left; 
+}
+.featureCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 30px 60px rgba(226, 55, 68, 0.18);
+}
+
+.featureCard:hover .iconWrap {
+  transform: scale(1.08);
+}
+
+.featureCard svg {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.featureCard h4 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.featureCard p {
+  font-size: 13px;
+  color: #6b7280;
+}
+/* ===== Feature Icon Wrapper ===== */
+.iconWrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, #e23744, #fb7185);
+  padding-top: 12px;
+}
+
+.iconWrap svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.featureCard:nth-child(1) { animation-delay: 0.05s; }
+.featureCard:nth-child(2) { animation-delay: 0.15s; }
+.featureCard:nth-child(3) { animation-delay: 0.25s; }
+.featureCard:nth-child(4) { animation-delay: 0.35s; }
+
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ================= HOW IT WORKS ================= */
+.howItWorks {
+  padding: 90px 64px;
+  background: transparent;
+}
+
+.hiwTitle {
+  font-size: 36px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.hiwSub {
+  font-size: 14px;
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 64px;
+}
+
+/* Steps grid */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+/* Step card */
+.stepCard {
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.15); /* ✅ soft transparent */
+  backdrop-filter: blur(10px);
+
+  padding: 32px 28px;
+  border-radius: 20px;
+
+  box-shadow: 0px 20px 40px rgba(226, 55, 68, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+.stepCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 30px 60px rgba(226, 55, 68, 0.05);
+}
+
+.stepCard h4 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.stepCard p {
+  font-size: 14px;
+  color: #6b7280;
+  max-width: 320px;
+}
+
+/* Large step number */
+.stepNumber {
+  position: absolute;
+  top: -44px;
+  left: 0px;
+
+  font-size: 64px;
+  font-weight: 900;
+  color: rgba(226, 55, 68, 0.19);
+
+  line-height: 1;
+  pointer-events: none;
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .howItWorks {
+    padding: 70px 20px;
+    text-align: center;
+  }
+
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .stepNumber {
+    position: static;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .stepCard p {
+    margin: 0 auto;
+  }
+}
+
+/* ================= CTA ================= */
+/* ================= CTA ================= */
+.cta {
+  margin: 100px auto;
+  max-width: 980px;
+
+  padding: 64px 40px;
+
+  border-radius: 26px;
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 240, 242, 0.85)
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0px 40px 80px rgba(226, 55, 68, 0.18);
+
+  animation: fadeUp 0.8s ease both;
+}
+
+/* icon at top */
+.ctaIcon {
+  width: 56px;
+  height: 56px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #e23744, #fb7185);
+  box-shadow: 0px 18px 36px rgba(226, 55, 68, 0.25);
+}
+
+.ctaIcon svg {
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+}
+
+/* heading */
+.cta h2 {
+  font-size: 34px;
+  font-weight: 900;
+  color: #111827;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+/* paragraph */
+.cta p {
+  max-width: 640px;
+  margin: 0 auto 28px;
+
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+/* button spacing */
+.cta .primaryBtn {
+  padding: 14px 26px;
+  border-radius: 16px;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+/* helper text */
+.cta span {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ================= FOOTER ================= */
+/* ================= FOOTER ================= */
+.footer {
+  padding: 22px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(226, 55, 68, 0.15);
+}
+
+/* LEFT SIDE */
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footerLogo {
+  width: 34px;
+  height: 30px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #e23744, #fb7185);
+}
+
+.footerLogo img {
+  
+  width: 26px;          /* ⬆ increase size */
+  height: auto;         /* 🔑 preserve original aspect ratio */
+  object-fit: contain;  /* 🔑 never crop or distort */
+
+
+}
+
+.footerLeft p {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* RIGHT SIDE */
+.footerActions {
+  display: flex;
+  gap: 22px; /* ✅ proper spacing */
+}
+
+.footerLink {
+  background: transparent;
+  border: none;
+
+  font-size: 13px;
+  font-weight: 500; /* ✅ lighter text */
+  color: #6b7280;   /* ✅ softer color */
+
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: #e23744;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .footer {
+    padding: 18px 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .heroRight {
+    margin-top: 40px;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .header,
+  .footer {
+    padding: 18px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 14px 18px;
+  }
+
+  .logo span {
+    font-size: 15px;
+  }
+}

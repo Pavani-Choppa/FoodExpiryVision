@@ -1,0 +1,41 @@
+npm init -y
+npm install express mongoose cors dotenv jsonwebtoken bcryptjs multer axios
+npm install nodemon --save-dev
+
+//mongodb user database
+foodexpiryuserFinalyearproject
+
+//mongodb connection string
+mongodb+srv://foodexpiryuser:foodexpiryuserFinalyearproject@cluster0.iaherw1.mongodb.net/
+
+//------- register API Endpoint ------//
+POST /api/auth/register
+{
+  "name": "Pavani",
+  "email": "pavani@gmail.com",
+  "password": "123456"
+}
+
+url To test Postman--------------  http://localhost:5000/api/auth/register
+url To test Postman--------------  http://localhost:5000/api/auth/login
+
+//------- inventory API Endpoint ------//
+
+url to Postman for POST----------------- http://localhost:5000/api/food
+{
+  "name": "Milk Packet",
+  "category": "Dairy",
+  "expiryDate": "2026-02-10"
+}
+
+
+to get item-------------------- http://localhost:5000/api/food
+
+PUT  --------------------- http://localhost:5000/api/food/<FOOD_ID>
+
+{
+  "status": "UNSAFE"
+}
+
+DELETE ------------------ http://localhost:5000/api/food/<FOOD_ID>
+url To test Postman--------------  http://localhost:5000/uploads/image-name.jpg // for image

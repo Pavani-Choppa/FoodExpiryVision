@@ -1,0 +1,28 @@
+    :root {
+  /* Brand Colors */
+  --primary: #e23744;
+  --rose-accent: #fb7185;
+
+  /* Status Colors */
+  --fresh: #22c55e;
+  --near-expiry: #f59e0b;
+  --expired: #ef4444;
+
+  /* Backgrounds */
+  --cream-bg: #fff7f4;
+  --white: #ffffff;
+
+  /* Text */
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.35);
+
+  /* Shadow */
+  --shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+
+  /* Radius */
+  --radius: 18px;
+}

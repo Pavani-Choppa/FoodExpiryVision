@@ -1,0 +1,282 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+/* Main content wrapper (sidebar-safe) */
+.main {
+  flex: 1;
+  margin-left: 260px;     /* sidebar width */
+  padding-top: 72px;      /* topbar height */
+  background: #fff5f5;
+}
+
+
+
+@media (max-width: 768px) {
+  .main {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Page */
+.page {
+  padding: 24px 32px;
+  padding-top: 46px;
+  min-height: 100vh;
+  background: #fff5f5;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 16px;
+    padding-top: 16px;
+  }
+}
+
+/* ================= HEADER ================= */
+.header h1 {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.header p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+/* Quick Add */
+.quickAdd {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin: 24px 0;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+  border-radius: 20px;
+  padding: 80px 50px;
+  background-color: rgba(226, 55, 68, 0.15);
+}
+
+.quickCard {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  text-align: center;
+  border: 1px dashed #e2374598;
+  cursor: pointer;
+}
+
+.quickCard h4 {
+  margin-top: 8px;
+}
+
+.quickCard p {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Content */
+.content {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 22px;
+}
+
+.formCard,
+.previewCard {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+}
+
+.previewCard{
+    max-height: 400px;
+}
+
+.previewCategory{
+    padding-bottom: 10px;
+  border-bottom: 2px solid rgba(226, 55, 68, 0.15);
+
+}
+
+.formCard label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #e23744, #fb7185);
+  /* box-shadow: 0px 18px 36px rgba(226, 55, 68, 0.25); */
+}
+
+.icon svg {
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+}
+
+.formCard input,
+.formCard textarea {
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+  /* cursor: pointer; */
+  background: #fff1f2;
+
+}
+
+.formCard input:hover,.formCard textarea:hover {
+  border-color: #e23744;
+}
+
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.primary {
+  flex: 1;
+  background: linear-gradient(90deg, #e23744, #fb7185);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 14px;
+}
+
+.secondary {
+  flex: 1;
+  background: #fff1f2;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+  padding: 12px;
+  border-radius: 14px;
+}
+.secondary:hover{
+  border: 1px solid #e23744;
+  background: #fff;
+
+}
+
+/* Preview */
+.previewBox {
+  text-align: center;
+  padding: 24px;
+}
+
+.previewBox img {
+  width: 80px;
+  height: 80px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.previewMeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+
+/* ===== Calendar ===== */
+.dateWrap {
+  position: relative;
+}
+
+.dateBtn {
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+  padding: 12px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.calendarBox {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fff;
+  border-radius: 18px;
+  padding: 14px;
+  border: 1px solid rgba(226, 55, 68, 0.15);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  z-index: 100;
+}
+
+.day {
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.day:hover {
+  background: #fff1f2;
+}
+
+.day:focus {
+  background: #e23744;
+  color: #fff;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .main {
+    margin-left: 0;
+    width: 100%;
+    padding-bottom: 80px;
+
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .quickAdd {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.dateField {
+  position: relative;
+}
+
+.calendarPopup {
+  position: absolute;
+  top: 74px;
+  left: 0;
+  z-index: 1000;
+}
