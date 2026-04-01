@@ -232,30 +232,4 @@ npm run dev
 
 ---
 
-## 🤝 Contributing
-
-1. Fork repository
-2. Create branch
-3. Commit changes
-4. Push
-5. Open PR
-
----
-
-## 👩‍💻 Author
-
-**Pavani Choppa**
-
----
-
-## ⭐ Support
-
-If you like this project:
-
-* ⭐ Star the repo
-* 🍴 Fork it
-* 📢 Share it
-
----
-
 🔥 *AI + Full Stack = Real Impact Project*
