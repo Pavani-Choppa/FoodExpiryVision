@@ -15,27 +15,58 @@ router.post("/login", login);
 router.get("/me", authMiddleware, getMe);
 router.put("/profile", authMiddleware, updateProfile);
 
+// router.post("/reset-password", async (req, res) => {
+//   try {
+//     const { token, password } = req.body;
+
+//     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+//     const user = await User.findOne({ email: decoded.email });
+
+//     if (!user) {
+//       return res.status(404).json({ message: "User not found" });
+//     }
+
+//     const hashedPassword = await bcrypt.hash(password, 10);
+
+//     user.password = hashedPassword;
+//     await user.save();
+
+//     res.json({ message: "Password updated successfully" });
+
+//   } catch (err) {
+//     console.error(err);
+//     res.status(400).json({ message: "Invalid or expired token" });
+//   }
+// });
+
 router.post("/reset-password", async (req, res) => {
   try {
     const { token, password } = req.body;
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
+    console.log("Decoded email:", decoded.email);
+
     const user = await User.findOne({ email: decoded.email });
 
     if (!user) {
+      console.log("User not found ❌");
       return res.status(404).json({ message: "User not found" });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
     user.password = hashedPassword;
+
     await user.save();
+
+    console.log("Password updated successfully ✅");
 
     res.json({ message: "Password updated successfully" });
 
   } catch (err) {
-    console.error(err);
+    console.error("RESET ERROR:", err);
     res.status(400).json({ message: "Invalid or expired token" });
   }
 });
