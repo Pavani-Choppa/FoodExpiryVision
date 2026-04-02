@@ -14,27 +14,46 @@ import Analytics from "../pages/analytics/Analytics";
 import Notifications from "../pages/notifications/Notifications";
 // import Settings from "../pages/settings/Settings";
 import Profile from "../pages/profile/Profile";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 const AppRoutes = () => {
   return (
     <Routes>
       
-      <Route path="/login" element={<Login />} />
+      {/* <Route path="/login" element={<Login />} />
 
       <Route path="/signup" element={<Register />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/dashboard" element={<ProtectedRoute><Dashboard /> </ProtectedRoute>} />
       <Route path="/inventory" element={<Inventory />} />
       <Route path="/add-item" element={<AddItem />} />
       <Route path="/scan-expiry" element={<ScanExpiry />} />
       <Route path="/analytics" element={<Analytics />} />
       <Route path="/notifications" element={<Notifications />} />
-      {/* <Route path="/settings" element={<Settings />} /> */}
+      <Route path="/settings" element={<Settings />} />
       <Route path="/profile" element={<Profile />} />
 
       <Route path="*" element={<NotFound />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/check-email" element={<CheckEmail />} />
+      <Route path="/" element={<Landing />} /> */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Register />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/check-email" element={<CheckEmail />} />
       <Route path="/" element={<Landing />} />
+
+      {/* 🔒 Protected Routes Group */}
+      <Route element={<ProtectedRoute />}>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/inventory" element={<Inventory />} />
+        <Route path="/add-item" element={<AddItem />} />
+        <Route path="/scan-expiry" element={<ScanExpiry />} />
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/profile" element={<Profile />} />
+      </Route>
+
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

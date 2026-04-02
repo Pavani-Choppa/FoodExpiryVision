@@ -11,12 +11,39 @@ const ForgotPassword = () => {
 
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   // Later: API call -> send reset email/otp
+  //   // After success navigate to check email screen
+  //   navigate("/check-email", { state: { email } });
+  // };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Later: API call -> send reset email/otp
-    // After success navigate to check email screen
-    navigate("/check-email", { state: { email } });
+    try {
+      const API_URL = import.meta.env.VITE_API_URL;
+
+      const response = await fetch(`${API_URL}/api/auth/forgot-password`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send email");
+      }
+
+      // ✅ Only navigate AFTER email is sent
+      navigate("/check-email", { state: { email } });
+
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send reset email ❌");
+    }
   };
 
   return (

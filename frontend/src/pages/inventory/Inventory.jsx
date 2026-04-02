@@ -36,7 +36,7 @@ const Inventory = () => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const focusItemId = searchParams.get("itemId");
-
+  const API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
       if (!focusItemId || items.length === 0) return;
 
@@ -345,7 +345,7 @@ const filteredItems = items.filter((item) => {
                         <div className={styles.imageBox}>
                             {/* <img src={item.image} alt={item.name} /> */}
                             <img
-                              src={`http://localhost:5000${item.image}?t=${item.updatedAt}`}
+                              src={`${API_URL}${item.image}?t=${item.updatedAt}`}
                               alt={item.name}
                             />
 

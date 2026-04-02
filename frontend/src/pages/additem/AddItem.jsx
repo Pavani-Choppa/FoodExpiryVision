@@ -17,7 +17,7 @@ const AddItem = () => {
       const location = useLocation();
       const editMode = location.state?.mode === "edit";
       const editItem = location.state?.item;
-
+      const API_URL = import.meta.env.VITE_API_URL;
       const [form, setForm] = useState({
             name: "",
             category: "",
@@ -122,8 +122,21 @@ const AddItem = () => {
       //     navigate("/inventory");
       //   };
 
+       const isFormValid =
+          form.name.trim() !== "" &&
+          form.category !== "" &&
+          form.expiryDate !== "" &&
+          form.quantity > 0 &&
+          form.unit !== "" &&
+          form.storage !== "" &&
+          form.image !== null; // image also mandatory
+
 
       const handleSubmit = async () => {
+        if (!isFormValid) {
+          alert("Please fill all required fields");
+          return;
+        }
       try {
         const formData = new FormData();
 
@@ -170,6 +183,7 @@ const AddItem = () => {
         }, [form.image]);
 
 
+       
 
 
           
@@ -300,7 +314,7 @@ const AddItem = () => {
                 </div>
 
                 <label>
-                  Storage Location
+                  Storage Location *  
                   <CustomDropdown
                     label="Storage Location"
                     value={form.storage}
@@ -324,9 +338,21 @@ const AddItem = () => {
 
                 <div className={styles.actions}>
                   <button className={styles.secondary} onClick={() => navigate("/scan-expiry")}>Scan Expiry</button>
-                  <button className={styles.primary} onClick={handleSubmit}>
-              {editMode ? "Edit Item" : "Add New Item"}
-            </button>
+                  {/* <button className={styles.primary} onClick={handleSubmit}>
+                    {editMode ? "Edit Item" : "Add New Item"}
+                  </button> */}
+
+                  <button
+                      className={styles.primary}
+                      onClick={handleSubmit}
+                      disabled={!isFormValid}
+                      style={{
+                        opacity: isFormValid ? 1 : 0.5,
+                        cursor: isFormValid ? "pointer" : "not-allowed",
+                      }}
+                  >
+                    {editMode ? "Edit Item" : "Add New Item"}
+                  </button>
 
                 </div>
               </div>
@@ -341,7 +367,7 @@ const AddItem = () => {
                       src={
                         form.image instanceof File
                           ? URL.createObjectURL(form.image)               // new upload
-                          : `http://localhost:5000${form.image}`          // existing image
+                          : `${API_URL}${form.image}`          // existing image
                       }
                       alt="preview"
                     />

@@ -92,43 +92,26 @@ const ScanExpiry = () => {
     }, [step]);
 
 
-    // const sendImageToModel = async (imageBlob) => {
-    //   const formData = new FormData();
-    //   formData.append("file", imageBlob);
-
-    //   try {
-    //     // const response = await fetch("http://localhost:5000/api/food/scan", {
-    //     // // fetch("http://127.0.0.1:8000/predict", {
-    //     //   method: "POST",
-    //     //   body: formData,
-    //     // });
+ 
         
 
 
 
-    //     const data = await response.json();
-
-    //     if (data.label === "Fresh") {
-    //       setExpiryDate("Safe to consume");
-    //       setStep("success");
-    //     } else {
-    //       setStep("manual");
-    //     }
-
-    //   } catch (error) {
-    //     console.error(error);
-    //     setStep("manual");
-    //   }
-    // };
     const sendImageToModel = async (imageBlob) => {
       const formData = new FormData();
       formData.append("image", imageBlob);
 
       try {
-        const response = await fetch("http://localhost:5000/api/food/scan", {
+
+        const API_URL = import.meta.env.VITE_API_URL;
+
+
+        const response = await fetch(`${API_URL}/api/food/scan`, {
           method: "POST",
           body: formData,
         });
+        
+        
 
         const data = await response.json();
 
