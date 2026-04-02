@@ -7,8 +7,9 @@ export const analyzeImage = async (imagePath) => {
   formData.append("file", fs.createReadStream(imagePath));
 
   try {
+    const AI_URL = process.env.AI_URL;
     const response = await axios.post(
-      "http://127.0.0.1:8000/predict",
+      `${AI_URL}/predict`,
       formData,
       {
         headers: formData.getHeaders(),
