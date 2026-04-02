@@ -22,6 +22,7 @@
     "multer": "^2.0.2",
     "node-cron": "^4.2.1",
     "nodemailer": "^8.0.4",
+    "resend": "^6.10.0",
     "router": "^2.2.0"
   },
   "devDependencies": {
