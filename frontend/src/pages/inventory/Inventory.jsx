@@ -402,7 +402,7 @@ const filteredItems = items.filter((item) => {
 
                         <td className={styles.itemCell}>
                             <img
-                              src={`http://localhost:5000${item.image}?t=${item.updatedAt}`}
+                              src={`${API_URL}${item.image}?t=${item.updatedAt}`}
                               alt={item.name}
                             
                               className={styles.itemImage}
