@@ -18,7 +18,9 @@ router.post("/forgot-password", async (req, res) => {
 
     console.log("Sending email to:", email);
 
-    const resetLink = "https://your-frontend-url/reset-password";
+    // const resetLink = "https://your-frontend-url/reset-password";
+    const resetLink = "http://localhost:5173/reset-password";
+    // const resetLink = "http://localhost:5173/reset-password";
 
     await sendEmail(
       email,
