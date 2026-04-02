@@ -76,11 +76,11 @@
   margin-bottom: 20px;
 }
 
-.actions {
+/* .actions {
   display: flex;
   gap: 14px;
   justify-content: center;
-}
+} */
 
 .lightBtn {
   background: #fff1f2;
@@ -127,6 +127,10 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+.actions > * {
+  min-width: 0; /* prevents overflow */
 }
 
 .ocrInfo {
@@ -744,3 +748,16 @@
   font-size: 11px;
 }
 
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+/* 🔥 MOBILE FIX */
+@media (max-width: 768px) {
+  .actions {
+    grid-template-columns: 1fr !important; /* force 1 column */
+  }
+}
