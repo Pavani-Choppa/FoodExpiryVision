@@ -57,7 +57,8 @@ router.post("/reset-password", async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    user.password = hashedPassword;
+    // user.password = hashedPassword;
+    user.passwordHash = hashedPassword;
 
     await user.save();
 
