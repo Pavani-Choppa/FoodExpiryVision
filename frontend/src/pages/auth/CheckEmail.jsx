@@ -9,7 +9,7 @@ const CheckEmail = () => {
   const location = useLocation();
 
   const [showToast, setShowToast] = useState(true);
-
+  const [loading, setLoading] = useState(false);
   const email = location?.state?.email || "your email";
 
   useEffect(() => {
@@ -17,9 +17,29 @@ const CheckEmail = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleResend = () => {
-    // Later: API call -> resend reset link/otp
-    setShowToast(true);
+  const handleResend = async () => {
+    setLoading(true);
+
+    try {
+      const API_URL = import.meta.env.VITE_API_URL;
+
+      const response = await fetch(`${API_URL}/api/auth/forgot-password`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) throw new Error();
+
+      setShowToast(true);
+
+    } catch {
+      alert("Failed to resend email ❌");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -97,8 +117,13 @@ const CheckEmail = () => {
             We sent a password reset link to <span className={styles.boldEmail}>{email}</span>
           </p>
 
-          <button type="button" className={styles.resendBtn} onClick={handleResend}>
-            Didn&apos;t receive the email? Click to resend
+          <button
+            type="button"
+            className={styles.resendBtn}
+            onClick={handleResend}
+            disabled={loading}
+          >
+            {loading ? "Sending..." : "Didn't receive the email? Click to resend"}
           </button>
 
           <button
