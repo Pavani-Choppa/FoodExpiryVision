@@ -10,6 +10,29 @@ router.post("/login", login);
 router.get("/me", authMiddleware, getMe);
 router.put("/profile", authMiddleware, updateProfile);
 
+import { sendEmail } from "../utils/sendEmail.js";
+
+router.post("/forgot-password", async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    console.log("Sending email to:", email);
+
+    const resetLink = "https://your-frontend-url/reset-password";
+
+    await sendEmail(
+      email,
+      "Password Reset",
+      `Click here to reset your password: ${resetLink}`
+    );
+
+    res.json({ message: "Email sent successfully" });
+
+  } catch (err) {
+    console.error("EMAIL ERROR:", err);
+    res.status(500).json({ error: "Failed to send email" });
+  }
+});
 
 
 
