@@ -5,6 +5,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import NotFound from "../pages/notfound/NotFound";
 import Register from "../pages/auth/Register";
 import ForgotPassword from "../pages/auth/ForgotPassword";
+import ResetPassword from "../pages/auth/ResetPassword";
 import CheckEmail from "../pages/auth/CheckEmail";
 import Landing from "../pages/landing/Landing";
 import Inventory from "../pages/inventory/Inventory";
@@ -41,7 +42,7 @@ const AppRoutes = () => {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/check-email" element={<CheckEmail />} />
       <Route path="/" element={<Landing />} />
-
+      <Route path="/reset-password" element={<ResetPassword />} />
       {/* 🔒 Protected Routes Group */}
       <Route element={<ProtectedRoute />}>
         <Route path="/dashboard" element={<Dashboard />} />
