@@ -4,7 +4,7 @@ import { getMe ,  updateProfile } from "../controllers/auth.controller.js";
 import authMiddleware from "../middleware/auth.middleware.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import User from "../models/User.js"; // your model
+import User from "../models/User.model.js"; // your model
 import { sendEmail } from "../utils/sendEmail.js";
 
 
