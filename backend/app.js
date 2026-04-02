@@ -21,8 +21,16 @@ connectDB();
 
 const app = express();
 
+// app.use(cors({
+//   origin: ["http://localhost:3000", "http://localhost:5173"],
+//   credentials: true
+// }));
+
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:5173"],
+  origin: [
+    "http://localhost:5173",
+    "https://food-expiry-vision-git-main-choppa-pavanis-projects.vercel.app"
+  ],
   credentials: true
 }));
 
