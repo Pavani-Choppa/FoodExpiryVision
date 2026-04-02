@@ -29,11 +29,10 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://food-expiry-vision-git-main-choppa-pavanis-projects.vercel.app"
+    "https://food-expiry-vision.vercel.app"
   ],
   credentials: true
 }));
-
 
 
 
