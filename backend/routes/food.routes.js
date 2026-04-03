@@ -1,5 +1,6 @@
 import express from "express";
 import { upload } from "../middleware/upload.js";
+import { uploadCloudinary } from "../middleware/uploadCloudinary.js";
 import authMiddleware from "../middleware/auth.middleware.js";
 import {
   addFoodItem,
@@ -22,5 +23,7 @@ router.put("/:id", authMiddleware, upload.single("image"), updateFoodItem);
 router.patch("/:id/consume", authMiddleware, markFoodConsumed);
 router.delete("/:id", authMiddleware, deleteFoodItem);
 router.post("/scan", upload.single("image"), scanFood);
+router.post("/", authMiddleware, uploadCloudinary.single("image"), addFoodItem);
+router.put("/:id", authMiddleware, uploadCloudinary.single("image"), updateFoodItem);
 
 export default router;

@@ -140,7 +140,7 @@ const Register = () => {
                   name="fullName"
                   value={form.fullName}
                   onChange={handleChange}
-                  placeholder="John Doe"
+                  placeholder="Your Name"
                   className={styles.input}
                   required
                 />
