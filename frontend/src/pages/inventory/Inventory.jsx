@@ -281,6 +281,7 @@ const filteredItems = items.filter((item) => {
             {view === "grid" && (
                 <div className={styles.grid}>
                     {filteredItems.map((item) => (
+                      
                     <div
                       id={item._id}
                       key={item._id}
@@ -344,9 +345,20 @@ const filteredItems = items.filter((item) => {
                         {/* Image */}
                         <div className={styles.imageBox}>
                             {/* <img src={item.image} alt={item.name} /> */}
-                            <img
+                            {/* <img
                               src={`${API_URL}${item.image}?t=${item.updatedAt}`}
                               alt={item.name}
+                            /> */}
+                            <img
+                              src={
+                                item.image?.startsWith("http")
+                                  ? item.image
+                                  : `${API_URL}${item.image}`
+                              }
+                              alt={item.name}
+                              onError={(e) => {
+                                e.target.src = "/fallback.png";
+                              }}
                             />
 
 
@@ -401,11 +413,22 @@ const filteredItems = items.filter((item) => {
                         >
 
                         <td className={styles.itemCell}>
-                            <img
+                            {/* <img
                               src={`${API_URL}${item.image}?t=${item.updatedAt}`}
                               alt={item.name}
                             
                               className={styles.itemImage}
+                            /> */}
+                            <img
+                              src={
+                                item.image?.startsWith("http")
+                                  ? item.image
+                                  : `${API_URL}${item.image}`
+                              }
+                              alt={item.name}
+                              onError={(e) => {
+                                e.target.src = "/fallback.png";
+                              }}
                             />
                             <span className={styles.itemName}>{item.name}</span>
                         </td>
